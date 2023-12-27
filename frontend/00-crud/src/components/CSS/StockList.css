@@ -5,7 +5,7 @@
     padding: 10pt;
     max-height: 400px;
     overflow-y: auto;
-    box-shadow: #ccc;
+    box-shadow: #b3b3b3;
   }
 
   
@@ -20,26 +20,38 @@
   /* Estilos para las celdas de la tabla */
   .stock-table th,
   .stock-table td {
-    border: 1px solid #ccc;
     padding: 8px;
     text-align: left;
+  }
+  .stock-table .td-main{
+    cursor: pointer;
   }
   
   /* Estilo para la fila del encabezado de la tabla */
   .stock-table th {
-    background-color: #f5f5f5;
+    background-color: #4664eb;
+    color: #ffffff;
   }
   
+
   /* Estilo para las filas impares */
-  .stock-table tr:nth-child(odd) {
-    background-color: #ffffff;
+.stock-table tr:nth-child(odd) {
+    background-color: #eaecff;
   }
 
 /* Estilo para las filas pares */
 .stock-table tr:nth-child(even) {
   background-color: #f9f9f9;
 }
-  
+
 .stock-table tr:hover {
-  background-color: #fffcdd;
+  background-color: #4664eb;
+  color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra */
+  transition: transform 0.5s, scale 0.5s; /* Define la transición por separado */
+}
+
+.stock-table tr:hover {
+  padding: auto; /* No es necesario establecer el padding aquí */
+  transform: scale(1.02); /* Aumenta el tamaño al hacer hover */
 }
