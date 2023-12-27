@@ -1,0 +1,228 @@
+[
+    {
+      "name": "AAPL",
+      "saleDate": "25/12/2023",
+      "price": 160,
+      "cantidad": 15,
+      "costo": 2400
+    },
+    {
+      "name": "AMZN",
+      "saleDate": "25/12/2023",
+      "price": 3200,
+      "cantidad": 8,
+      "costo": 25600
+    },
+    {
+      "name": "GOOGL",
+      "saleDate": "25/12/2023",
+      "price": 3000,
+      "cantidad": 12,
+      "costo": 36000
+    },
+    {
+      "name": "FB",
+      "saleDate": "25/12/2023",
+      "price": 350,
+      "cantidad": 25,
+      "costo": 8750
+    },
+    {
+        "name": "TSLA",
+        "saleDate": "25/12/2023",
+        "price": 700,
+        "cantidad": 10,
+        "costo": 7000
+        },
+        {
+        "name": "MSFT",
+        "saleDate": "25/12/2023",
+        "price": 250,
+        "cantidad": 20,
+        "costo": 5000
+        },
+        {
+        "name": "NVDA",
+        "saleDate": "25/12/2023",
+        "price": 500,
+        "cantidad": 10,
+        "costo": 5000
+        },
+        {
+        "name": "PYPL",
+        "saleDate": "25/12/2023",
+        "price": 200,
+        "cantidad": 20,
+        "costo": 4000
+        },
+        {
+        "name": "NFLX",
+        "saleDate": "25/12/2023",
+        "price": 500,
+        "cantidad": 10,
+        "costo": 5000
+        },
+        {
+        "name": "ADBE",
+        "saleDate": "25/12/2023",
+        "price": 500,
+        "cantidad": 10,
+        "costo": 5000
+        },
+        {
+        "name": "INTC",
+        "saleDate": "25/12/2023",
+        "price": 50,
+        "cantidad": 100,
+        "costo": 5000
+        },
+        {
+        "name": "CSCO",
+        "saleDate": "25/12/2023",
+        "price": 50,
+        "cantidad": 100,
+        "costo": 5000
+        },
+        {
+        "name": "CMCSA",
+        "saleDate": "25/12/2023",
+        "price": 50,
+        "cantidad": 100,
+        "costo": 5000
+        },
+        {
+        "name": "PEP",
+        "saleDate": "25/12/2023",
+        "price": 50,
+        "cantidad": 100,
+        "costo": 5000
+        },
+        {
+        "name": "AVGO",
+        "saleDate": "25/12/2023",
+        "price": 50,
+        "cantidad": 100,
+        "costo": 5000
+        },
+        {
+        "name": "TXN",
+        "saleDate": "25/12/2023",
+        "price": 50,
+        "cantidad": 100,
+        "costo": 5000
+        },
+        {
+            "name": "AAPL",
+            "saleDate": "25/12/2023",
+            "price": 160,
+            "cantidad": 15,
+            "costo": 2400
+          },
+          {
+            "name": "AMZN",
+            "saleDate": "25/12/2023",
+            "price": 3200,
+            "cantidad": 8,
+            "costo": 25600
+          },
+          {
+            "name": "GOOGL",
+            "saleDate": "25/12/2023",
+            "price": 3000,
+            "cantidad": 12,
+            "costo": 36000
+          },
+          {
+            "name": "FB",
+            "saleDate": "25/12/2023",
+            "price": 350,
+            "cantidad": 25,
+            "costo": 8750
+          },
+          {
+              "name": "TSLA",
+              "saleDate": "25/12/2023",
+              "price": 700,
+              "cantidad": 10,
+              "costo": 7000
+              },
+              {
+              "name": "MSFT",
+              "saleDate": "25/12/2023",
+              "price": 250,
+              "cantidad": 20,
+              "costo": 5000
+              },
+              {
+              "name": "NVDA",
+              "saleDate": "25/12/2023",
+              "price": 500,
+              "cantidad": 10,
+              "costo": 5000
+              },
+              {
+              "name": "PYPL",
+              "saleDate": "25/12/2023",
+              "price": 200,
+              "cantidad": 20,
+              "costo": 4000
+              },
+              {
+              "name": "NFLX",
+              "saleDate": "25/12/2023",
+              "price": 500,
+              "cantidad": 10,
+              "costo": 5000
+              },
+              {
+              "name": "ADBE",
+              "saleDate": "25/12/2023",
+              "price": 500,
+              "cantidad": 10,
+              "costo": 5000
+              },
+              {
+              "name": "INTC",
+              "saleDate": "25/12/2023",
+              "price": 50,
+              "cantidad": 100,
+              "costo": 5000
+              },
+              {
+              "name": "CSCO",
+              "saleDate": "25/12/2023",
+              "price": 50,
+              "cantidad": 100,
+              "costo": 5000
+              },
+              {
+              "name": "CMCSA",
+              "saleDate": "25/12/2023",
+              "price": 50,
+              "cantidad": 100,
+              "costo": 5000
+              },
+              {
+              "name": "PEP",
+              "saleDate": "25/12/2023",
+              "price": 50,
+              "cantidad": 100,
+              "costo": 5000
+              },
+              {
+              "name": "AVGO",
+              "saleDate": "25/12/2023",
+              "price": 50,
+              "cantidad": 100,
+              "costo": 5000
+              },
+              {
+              "name": "TXN",
+              "saleDate": "25/12/2023",
+              "price": 50,
+              "cantidad": 100,
+              "costo": 5000
+              }
+        
+  ]
+  

@@ -1,0 +1,45 @@
+/* StockList.css */
+
+/* Estilos para la tabla de acciones */
+.stock-table-container {
+    padding: 10pt;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: #ccc;
+  }
+
+  
+.stock-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+.stock-table:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Estilos para las celdas de la tabla */
+  .stock-table th,
+  .stock-table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  /* Estilo para la fila del encabezado de la tabla */
+  .stock-table th {
+    background-color: #f5f5f5;
+  }
+  
+  /* Estilo para las filas impares */
+  .stock-table tr:nth-child(odd) {
+    background-color: #ffffff;
+  }
+
+/* Estilo para las filas pares */
+.stock-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+  
+.stock-table tr:hover {
+  background-color: #fffcdd;
+}
