@@ -1,17 +1,18 @@
-import React from "react";
-import StockDetail from "./StockDetail";
+import React, { useState } from "react";
+import { createPortal } from 'react-dom';
+import StockDetail from "./StockDetail.jsx";
 
 const StockList = ({ stocks }) => {
-  const [selectedStock, setSelectedStock] = React.useState(null);
-  const handleStockClick = (stock) => {
-    setSelectedStock(stock);
-  }
-  const handleCloseModal = () => {
-    setSelectedStock(null);
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedStock, setSelectedStock] = useState(null);
+  const openmodal = (selectSk) => {
+    setSelectedStock(selectSk);
+    setIsOpen(true)
   };
+  const closemodal = () => setIsOpen(false);
   return (
     <div className="stock-list stock-table-container">
-      <table className="stock-table table-striped" >
+      <table className="stock-table table-striped">
         <thead>
           <tr>
             <th>Nombre de la acción</th>
@@ -24,24 +25,29 @@ const StockList = ({ stocks }) => {
         <tbody>
           {stocks.map((stock, index) => (
             <tr key={index}>
-              <td className="td-main" onClick={()=> handleStockClick(stock)}>
-                {stock.name}
+              <td>
+                <button onClick={()=> openmodal(stock)}>
+                  {stock.name}
+                </button>
               </td>
-              <td>{stock.saleDate}</td>
-              <td>{stock.price}</td>
-              <td>{stock.cantidad}</td>
-              <td>{stock.costo}</td>
+              <td>
+                {stock.saleDate}
+                </td>
+              <td>$ 
+                {stock.price}
+              </td>
+              <td>
+                {stock.cantidad}
+              </td>
+              <td>
+                $ {stock.costo}
+              </td>
             </tr>
           ))}
         </tbody>
       </table>
-      {selectedStock && (
-        <div className="modal-overlay">
-          <div className="modal">
-            <StockDetail stock={selectedStock} />
-            <button onClick={handleCloseModal}>Cerrar</button>
-          </div>
-        </div>
+      {isOpen && (
+          <StockDetail isOpen={isOpen} onClose={closemodal} stock={selectedStock}> </StockDetail>
       )}
     </div>
   );

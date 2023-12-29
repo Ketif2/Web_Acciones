@@ -2,19 +2,14 @@
 
 /* Estilos para la tabla de acciones */
 .stock-table-container {
-    padding: 10pt;
-    max-height: 400px;
-    overflow-y: auto;
     box-shadow: #b3b3b3;
+    margin: 10%;
   }
 
   
 .stock-table {
     width: 100%;
     border-collapse: collapse;
-  }
-.stock-table:hover {
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   }
   
   /* Estilos para las celdas de la tabla */
@@ -48,10 +43,26 @@
   background-color: #4664eb;
   color: #ffffff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra */
-  transition: transform 0.5s, scale 0.5s; /* Define la transición por separado */
+  transition: transform 0.3s, scale 0.3s; /* Define la transición por separado */
+}
+
+.stock-table tr:hover button{
+  background-color: #637ef8;
+  color: #ffffff;
 }
 
 .stock-table tr:hover {
-  padding: auto; /* No es necesario establecer el padding aquí */
+
   transform: scale(1.02); /* Aumenta el tamaño al hacer hover */
 }
+
+button{
+  background-color: #4664eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  cursor: pointer;
+  transition: transform 0.5s, scale 0.5s; /* Define la transición por separado */
+}
+
