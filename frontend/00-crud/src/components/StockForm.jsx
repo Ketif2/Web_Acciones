@@ -61,3 +61,4 @@ const StockForm = ({ onAddStock }) => {
 };
 
 export default StockForm;
+

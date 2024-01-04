@@ -13,10 +13,11 @@ public class BddConeccion {
 		private BddConeccion() {
 			if (cnn == null) {
 				String servidor = "127.0.0.1";
-				String database = "crud_acciones";
+				String database = "PRJact";
 				String usuario = "root";
-				String password = "";
-				String url = "jdbc:mysql://" + servidor + "/" + database;
+				String password = "C0n5truccioN";
+				int port = 13306;
+				String url = "jdbc:mysql://" + servidor + ":"+port+ "/" + database;
 				
 				try {
 					DriverManager.registerDriver(new com.mysql.cj.jdbc.Driver());
