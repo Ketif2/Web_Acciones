@@ -31,7 +31,7 @@ const StockList = ({ stocks }) => {
                 </button>
               </td>
               <td>
-                {stock.saleDate}
+                {stock.formattedSaleDate}
                 </td>
               <td>$ 
                 {stock.price}
