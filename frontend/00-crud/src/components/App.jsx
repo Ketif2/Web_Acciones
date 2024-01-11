@@ -3,6 +3,7 @@ import StockList from './StockList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './CSS/StockList.css';
 import StockForm from './StockForm';
+import './CSS/app.css';
 
 const NAVIGATION_EVENT = 'pushstate';
 
@@ -84,7 +85,7 @@ function App() {
   const home = () => {
     return (
       <div className="app">
-        <h1>Mis Acciones</h1>
+        <h1 className='titleCenter'>Mis Acciones</h1>
         <br />
         <div className="detail-button-container">
           <button onClick={() => openModal(selectedStock)}>

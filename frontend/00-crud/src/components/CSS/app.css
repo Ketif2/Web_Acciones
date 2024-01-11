@@ -1,0 +1,7 @@
+.titleCenter{
+    font-weight: bold;
+    margin-bottom: 1rem;  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
