@@ -56,6 +56,7 @@ function App() {
   const addActions = () => {
     return <StockForm />;
   };
+
  const handleAddStock = (formData) => {
     fetch('http://localhost:3000/actions', {
       method: 'POST',
@@ -91,6 +92,9 @@ function App() {
           <button onClick={() => openModal(selectedStock)}>
             Agregar Acción
           </button>
+          <button className="update-button-container update-prices-btn" onClick={updateStockPrices}>
+            Actualizar Precios
+          </button>
           {isOpen && <StockForm isOpen={isOpen} onClose={handleCloseModal} onAddStock={handleAddStock}/>}
         </div>
         <StockList stocks={stocks} />
@@ -98,6 +102,25 @@ function App() {
     );
   };
 
+  const updateStockPrices = () => {
+    fetch('http://localhost:3000/actions/updateStocks',{
+      method: 'GET'
+    })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        console.log('Stocks updated:', data);
+        setStocks(data);
+      })
+      .catch(error => {
+        console.error('Error al actualizar precios:', error);
+      });
+  };
+  
   return (
     <main>
       {route === '/' && home()}
