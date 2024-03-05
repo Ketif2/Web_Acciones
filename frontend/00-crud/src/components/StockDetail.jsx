@@ -27,7 +27,7 @@ const StockDetail = ({ stock, isOpen, onClose }) => {
       })
       .then((data) => {
         // Actualizar la interfaz después de agregar la acción de stock
-        console.log('Stock Actualizado:', data); // Actualizar el estado con los nuevos datos
+        //console.log('Stock Actualizado:', data); // Actualizar el estado con los nuevos datos
         window.location.reload();
         setIsOpen(false); // Cerrar el formulario modal
       })

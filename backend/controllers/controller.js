@@ -1,17 +1,23 @@
 const db = require("../config/database");
-const axios = require('axios');
 const API_KEY = 'QR52EVYY0QPOAJKS';
+const axios = require('axios');
 
 async function getStockPrice(stockSymbol) {
     try {
         const url = `https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=${stockSymbol}&apikey=${API_KEY}`;
         const response = await axios.get(url);
+        //console.log(response.data); 
         const timeSeries = response.data['Time Series (Daily)'];
-        const lastDate = Object.keys(timeSeries)[0];
-        const lastClosePrice = timeSeries[lastDate]['4. close'];
-        return parseFloat(lastClosePrice);
+        if (timeSeries) {
+            const lastDate = Object.keys(timeSeries)[0];
+            const lastClosePrice = timeSeries[lastDate]['4. close'];
+            return parseFloat(lastClosePrice);
+        }else {
+            console.log('No se encontraron datos para la serie diaria');
+            return null; // Asegúrate de manejar este caso en tu código
+        }
     } catch (error) {
-        console.error('Error al obtener el precio de la acción:', error);
+        console.error('Error al obtener el precio de la acción:', error.message);
         return null;
     }
 }
@@ -35,12 +41,13 @@ const controller = {
             const currentPrice = await getStockPrice(actionData.name); 
             const purchasePrice = actionData.price; 
             const quantity = actionData.cantidad; 
-    
+
             actionData.change = ((currentPrice - purchasePrice) / purchasePrice) * 100;
             actionData.gainLoss = (currentPrice - purchasePrice) * quantity;
+            //console.log(actionData.change)
     
             actionData.id = actionid;
-            console.log('Datos enviados al front: ', actionData);
+            //console.log('Datos enviados al front: ', actionData);
             return actionData;
           }));
     
@@ -97,39 +104,8 @@ const controller = {
         }
     },
     
-    updateStockData: async (req, res) => {
-        try {
-            const data = await db.collection('dataAcciones').get();
-            const actions = data.docs.map(doc => {
-                let actionData = doc.data();
-                actionData.id = doc.id;
-                return actionData;
-            });
-
-            // Actualizar cada acción con el precio actual y calcular la ganancia/perdida
-            for (const action of actions) {
-                const currentPrice = await getStockPrice(action.name);
-                const purchasePrice = action.price;
-                const quantity = action.cantidad;
-
-                // Calcular el cambio y la ganancia/perdida
-                const change = ((currentPrice - purchasePrice) / purchasePrice) * 100;
-                const gainLoss = (currentPrice - purchasePrice) * quantity;
-
-                // Actualizar la acción en la base de datos
-                await db.collection('dataAcciones').doc(action.id).update({
-                    change,
-                    gainLoss
-                });
-            }
-
-            res.json({ message: 'Datos de acciones actualizados correctamente' });
-        } catch (error) {
-            console.error('Error al actualizar datos de acciones:', error);
-            res.status(500).json({ message: error.message });
-        }
-    }
-
 };
+//console.log(controller.getActions());
+//console.log(getStockPrice('AMZN'));
 
 module.exports = controller;

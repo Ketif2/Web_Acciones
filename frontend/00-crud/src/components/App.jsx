@@ -18,6 +18,7 @@ function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedStock, setSelectedStock] = useState(null);
   const [stocks, setStocks] = useState([]);
+  const [sortCriteria, setSortCriteria] = useState(null);
 
   const openModal = (selectedStock) => {
     setSelectedStock(selectedStock);
@@ -73,7 +74,7 @@ function App() {
       })
       .then((data) => {
         // Actualizar la interfaz después de agregar la acción de stock
-        console.log('Stock agregado:', data);
+        //console.log('Stock agregado:', data);
         setStocks([...stocks, data]); // Actualizar el estado con los nuevos datos
         window.location.reload();
         setIsOpen(false); // Cerrar el formulario modal
@@ -89,10 +90,13 @@ function App() {
         <h1 className='titleCenter'>Mis Acciones</h1>
         <br />
         <div className="detail-button-container">
+          <button className='order-btn' onClick={() => sortStocks('name')}>
+            Ordenar
+          </button>
           <button onClick={() => openModal(selectedStock)}>
             Agregar Acción
           </button>
-          <button className="update-button-container update-prices-btn" onClick={updateStockPrices}>
+          <button className="update-prices-btn" onClick={updateStockPrices}>
             Actualizar Precios
           </button>
           {isOpen && <StockForm isOpen={isOpen} onClose={handleCloseModal} onAddStock={handleAddStock}/>}
@@ -103,7 +107,7 @@ function App() {
   };
 
   const updateStockPrices = () => {
-    fetch('http://localhost:3000/actions/updateStocks',{
+    fetch('http://localhost:3000/actions',{
       method: 'GET'
     })
       .then(response => {
@@ -113,7 +117,7 @@ function App() {
         return response.json();
       })
       .then(data => {
-        console.log('Stocks updated:', data);
+        //console.log('Stocks updated:', data);
         setStocks(data);
       })
       .catch(error => {
@@ -121,6 +125,17 @@ function App() {
       });
   };
   
+  const sortStocks = (criteria) => {
+    const sortedStocks = [...stocks].sort((a, b) => {
+      if (criteria === 'name') {
+        return a.name.localeCompare(b.name);
+      } else if (criteria === 'date') {
+        return new Date(a.saleDate) - new Date(b.saleDate);
+      }
+    });
+    setStocks(sortedStocks);
+  }
+
   return (
     <main>
       {route === '/' && home()}
