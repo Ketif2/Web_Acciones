@@ -27,7 +27,7 @@ const StockDetail = ({ stock, isOpen, onClose }) => {
       })
       .then((data) => {
         // Actualizar la interfaz después de agregar la acción de stock
-        console.log('Stock Actualizado:', data); // Actualizar el estado con los nuevos datos
+        //console.log('Stock Actualizado:', data); // Actualizar el estado con los nuevos datos
         window.location.reload();
         setIsOpen(false); // Cerrar el formulario modal
       })
@@ -52,6 +52,7 @@ const StockDetail = ({ stock, isOpen, onClose }) => {
             <p><strong>Precio:</strong> $ {stock.price}</p>
             <p><strong>Cantidad:</strong> {stock.cantidad}</p>
             <p><strong>Costo:</strong> $ {stock.costo}</p>
+
           </div>
           <div className='detail-button-container'> 
             <button onClick={handleEditClick}>
